@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./config";
 
-// ==================== VEHICLES ====================
+
 
 export const addVehicle = async (userId, vehicleData) => {
   try {
@@ -49,7 +49,7 @@ export const deleteVehicle = async (vehicleId) => {
   }
 };
 
-// ==================== SERVICES ====================
+
 
 export const addService = async (userId, serviceData) => {
   try {
@@ -79,7 +79,7 @@ export const getServices = async (userId) => {
       services.push({
         id: doc.id,
         ...data,
-        date: data.date.toDate(), // Convert Timestamp to Date
+        date: data.date.toDate(), 
       });
     });
     return { success: true, services };
